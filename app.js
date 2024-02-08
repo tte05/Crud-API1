@@ -11,7 +11,7 @@ const deleteMovie = require("./controllers/deleteMovie");
 //CONNECTION
 
 mongoose
-  .connect(process.env.mongo_connection, {})
+  .connect(process.env.mongo_connection//mongodb url in .env, {})
   .then(() => {
     console.log("Connected to mongoDb successfully");
   })
@@ -30,8 +30,6 @@ app.get("/api/movies", getAllMovies);
 app.get("/api/movies/:movie_id", getSingleMOvie);
 app.patch("/api/movies", editMovie);
 app.delete("/api/movies/:movie_id", deleteMovie);
-
-//OPEN AI SUGGESTIONS
 
 app.listen(8000, () => {
   console.log("Server started successfully");
