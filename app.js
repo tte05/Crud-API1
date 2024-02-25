@@ -11,7 +11,7 @@ const deleteMovie = require("./controllers/deleteMovie");
 //CONNECTION
 
 mongoose
-  .connect(process.env.mongo_connection//mongodb url in .env, {})
+  .connect(process.env.mongo_connection, {})//mongodb url in .env
   .then(() => {
     console.log("Connected to mongoDb successfully");
   })
